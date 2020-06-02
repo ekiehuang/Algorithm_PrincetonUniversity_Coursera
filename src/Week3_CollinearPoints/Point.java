@@ -79,10 +79,13 @@ public class Point implements Comparable<Point> {
      * if this point is greater than the argument point
      */
     public int compareTo(Point that) {
-        if(this.y>that.y) return +1;
-        else if(this.y<that.y) return -1;
-        else if (this.x < that.x) return -1;
-        else return 0;
+        if(y < that.y || (y == that.y && x < that.x)){
+            return -1;
+        }else if(y == that.y && x == that.x){
+            return 0;
+        }else{
+            return 1;
+        }
     }
 
     /**
@@ -111,10 +114,21 @@ public class Point implements Comparable<Point> {
      * Unit tests the Point data type.
      */
     public static void main(String[] args) {
-        Point p=new Point(5,3);
-        Point o=new Point(1,6);
-        //p.draw();
-        //p.drawTo(o);
+        Point p=new Point(5000,30000);
+        Point o=new Point(100,600);
+
+        StdDraw.enableDoubleBuffering();
+        StdDraw.setXscale(0, 32768);
+        StdDraw.setYscale(0, 32768);
+        StdDraw.setPenRadius(0.01);
+        StdDraw.setPenColor(StdDraw.BLUE);
+        p.draw();
+        StdDraw.show();
+
+        StdDraw.setPenColor(StdDraw.MAGENTA);
+
+        p.drawTo(o);
+        StdDraw.show();
         StdOut.println(p.toString()+o.toString()+", the slope is "+p.slopeTo(o));
         StdOut.println("p vs o "+p.compareTo(o));
         //StdOut.println(p.slopeOrder());
