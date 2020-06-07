@@ -4,7 +4,6 @@
  *  Description:
  **************************************************************************** */
 
-import edu.princeton.cs.algs4.Merge;
 import edu.princeton.cs.algs4.StdDraw;
 import edu.princeton.cs.algs4.StdOut;
 
@@ -12,50 +11,59 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class BruteCollinearPoints {
-    Point[] ps;
-    ArrayList<LineSegment> lines;
+    private ArrayList<LineSegment> lines;
 
     public BruteCollinearPoints(Point[] points) {
         assertPoints(points);
-        int N=points.length;
-        this.ps=new Point[N];
-        for(int i=0;i<N;i++){
-            ps[i]=points[i];
+        int N = points.length;
+        Point[] ps = new Point[N];
+        for (int i = 0; i < N; i++) {
+            ps[i] = points[i];
         }
         Arrays.sort(ps);
-        lines=new ArrayList<LineSegment>();
+        lines = new ArrayList<LineSegment>();
         for (int k1 = 0; k1 < N - 3; k1++) {
-            for (int k2 = k1 + 1; k2 < N-2; k2++) {
-                for(int k3 = k2+1; k3 < N-1; k3++){
-                    if(ps[k1].slopeTo(ps[k2])== ps[k1].slopeTo(ps[k3])) {
+            for (int k2 = k1 + 1; k2 < N - 2; k2++) {
+                for (int k3 = k2 + 1; k3 < N - 1; k3++) {
+                    if (ps[k1].slopeTo(ps[k2]) == ps[k1].slopeTo(ps[k3])) {
                         for (int k4 = k3 + 1; k4 < N; k4++) {
                             double sk = ps[k1].slopeTo(ps[k2]);
-                            if (sk == ps[k1].slopeTo(ps[k2]) && sk == ps[k1].slopeTo(ps[k4])){
+                            if (sk == ps[k1].slopeTo(ps[k2]) && sk == ps[k1].slopeTo(ps[k4])) {
                                 lines.add(new LineSegment(ps[k1], ps[k4]));
+                            }
                         }
                     }
                 }
             }
         }
-    }}// finds all line segments containing 4 points
+    }// finds all line segments containing 4 points
 
-    private void assertPoints(Point[] points){
-        if(points == null) throw new IllegalArgumentException("No points");
-        for(int i=0;i<points.length-1;i++){
-            for(int j=i+1;j<points.length;j++)
-            if(points[i]==null || points[i].compareTo(points[j])==0)
-                throw new IllegalArgumentException("Null or Duplicate points");
+    private void assertPoints(Point[] points) {
+        if (points == null) throw new IllegalArgumentException("No points");
+
+        for (int i = 0; i < points.length; i++) {
+            if (points[i] == null) throw new IllegalArgumentException("Null points");
         }
+        for (int i = 0; i < points.length - 1; i++) {
+            for (int j = i + 1; j < points.length; j++)
+                if (points[i].compareTo(points[j]) == 0)
+                    throw new IllegalArgumentException("Duplicate points");
+        }
+
     }
 
-    public int numberOfSegments(){return lines.size();};     // the number of line segments
+    public int numberOfSegments() {
+        return lines.size();
+    }
 
-    public LineSegment[] segments(){
-        LineSegment[] s =new LineSegment[lines.size()];
+    ;     // the number of line segments
+
+    public LineSegment[] segments() {
+        LineSegment[] s = new LineSegment[lines.size()];
         return lines.toArray(s);
     }                 // the line segments
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         Point[] points = new Point[10];
         points[0] = new Point(110, 220);
@@ -75,13 +83,13 @@ public class BruteCollinearPoints {
         StdDraw.setXscale(0, 32768);
         StdDraw.setYscale(0, 32768);
 
-        for(Point p : points){
+        for (Point p : points) {
             p.draw();
         }
         StdDraw.show();
 
         BruteCollinearPoints collinear = new BruteCollinearPoints(points);
-        for(LineSegment sg : collinear.segments()){
+        for (LineSegment sg : collinear.segments()) {
             StdOut.println(sg);
             sg.draw();
         }

@@ -60,10 +60,10 @@ public class Point implements Comparable<Point> {
      */
     public double slopeTo(Point that) {
         double slope;
-        if(this.x==that.x && this.y ==that.y) slope=Double.NEGATIVE_INFINITY;
-        else if(this.x == that.x) slope=+0.0;
-        else if(this.y == that.y) slope=Double.POSITIVE_INFINITY;
-        else slope=(double)(that.y-this.y)/(that.x-this.x);
+        if (this.x == that.x && this.y == that.y) slope = Double.NEGATIVE_INFINITY;
+        else if (this.y == that.y) slope = +0.0;
+        else if (this.x == that.x) slope = Double.POSITIVE_INFINITY;
+        else slope = (double) (that.y - this.y) / (that.x - this.x);
 
         return slope;
     }
@@ -79,11 +79,11 @@ public class Point implements Comparable<Point> {
      * if this point is greater than the argument point
      */
     public int compareTo(Point that) {
-        if(y < that.y || (y == that.y && x < that.x)){
+        if (y < that.y || (y == that.y && x < that.x)) {
             return -1;
-        }else if(y == that.y && x == that.x){
+        } else if (y == that.y && x == that.x) {
             return 0;
-        }else{
+        } else {
             return 1;
         }
     }
@@ -95,7 +95,7 @@ public class Point implements Comparable<Point> {
      * @return the Comparator that defines this ordering on points
      */
     public Comparator<Point> slopeOrder() {
-       return Comparator.comparingDouble(this::slopeTo);
+        return Comparator.comparingDouble(this::slopeTo);
     }
 
 
@@ -114,8 +114,8 @@ public class Point implements Comparable<Point> {
      * Unit tests the Point data type.
      */
     public static void main(String[] args) {
-        Point p=new Point(5000,30000);
-        Point o=new Point(100,600);
+        Point p = new Point(5000, 30000);
+        Point o = new Point(100, 600);
 
         StdDraw.enableDoubleBuffering();
         StdDraw.setXscale(0, 32768);
@@ -129,8 +129,8 @@ public class Point implements Comparable<Point> {
 
         p.drawTo(o);
         StdDraw.show();
-        StdOut.println(p.toString()+o.toString()+", the slope is "+p.slopeTo(o));
-        StdOut.println("p vs o "+p.compareTo(o));
+        StdOut.println(p.toString() + o.toString() + ", the slope is " + p.slopeTo(o));
+        StdOut.println("p vs o " + p.compareTo(o));
         //StdOut.println(p.slopeOrder());
     }
 }
