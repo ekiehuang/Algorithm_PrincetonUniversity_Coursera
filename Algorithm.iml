@@ -6,6 +6,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/Week1_Percolation" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Week2_Deque" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/Week3_CollinearPoints" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/Week4_SliderPuzzle" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

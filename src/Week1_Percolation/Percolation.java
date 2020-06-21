@@ -16,8 +16,7 @@ public class Percolation {
         this.n = n;
         if (n <= 0) {
             throw new IllegalArgumentException(n + " must be larger than 0!");
-        }
-        else {
+        } else {
             uf = new WeightedQuickUnionUF(n * n + 1);
             grid = new boolean[n][n];
             for (int i = 1; i <= n; i++) {
@@ -29,7 +28,7 @@ public class Percolation {
         }
     }
 
-    public boolean isInGrid(int row, int col) {
+    private boolean isInGrid(int row, int col) {
         if (row > 0 && row < grid.length && col > 0 && col < grid.length) return true;
         else return false;
     }
