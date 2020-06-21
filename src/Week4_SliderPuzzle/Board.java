@@ -3,7 +3,6 @@ import edu.princeton.cs.algs4.StdOut;
 
 public class Board {
     private final int[][] tl;
-    //private int[][] copy;
     private int n;
 
     // create a board from an n-by-n array of tiles,
