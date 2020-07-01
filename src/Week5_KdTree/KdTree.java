@@ -49,29 +49,29 @@ public class KdTree {
         if (root == null) root = new KdNode(p, new RectHV(0, 0, 1, 1), 1);
         else {
             double xmin = root.rec.xmin();
-            double xmax = root.rec.xmax();
             double ymin = root.rec.ymin();
+            double xmax = root.rec.xmax();
             double ymax = root.rec.ymax();
-            root = insertV(root, p, xmin, xmax, ymin, ymax);
+            root = insertV(root, p, xmin, ymin, xmax, ymax);
         }
     }             // add the point to the set (if it is not already in the set)
 
-    private KdNode insertV(KdNode kn, Point2D p, double xmin, double xmax, double ymin, double ymax) {
-        if (kn == null) return new KdNode(p, new RectHV(xmin, xmax, ymin, ymax), 1);
+    private KdNode insertV(KdNode kn, Point2D p, double xmin, double ymin, double xmax, double ymax) {
+        if (kn == null) return new KdNode(p, new RectHV(xmin, ymin, xmax, ymax), 1);
         if (kn.p.equals(p)) return kn;
         int cmp = Point2D.X_ORDER.compare(p, kn.p);
-        if (cmp < 0) kn.left = insertH(kn.left, p, xmin, kn.p.x(), ymin, ymax);
-        else kn.right = insertH(kn.right, p, kn.p.x(), xmax, ymin, ymax);
+        if (cmp < 0) kn.left = insertH(kn.left, p, xmin, ymin, kn.p.x(), ymax);
+        else kn.right = insertH(kn.right, p, kn.p.x(), ymin, xmax, ymax);
         kn.size = 1 + number(kn.left) + number(kn.right);
         return kn;
     }
 
-    private KdNode insertH(KdNode kn, Point2D p, double xmin, double xmax, double ymin, double ymax) {
-        if (kn == null) return new KdNode(p, new RectHV(xmin, xmax, ymin, ymax), 1);
+    private KdNode insertH(KdNode kn, Point2D p, double xmin, double ymin, double xmax, double ymax) {
+        if (kn == null) return new KdNode(p, new RectHV(xmin, ymin, xmax, ymax), 1);
         if (kn.p.equals(p)) return kn;
         int cmp = Point2D.Y_ORDER.compare(p, kn.p);
-        if (cmp < 0) kn.left = insertV(kn.left, p, xmin, xmax, ymin, kn.p.y());
-        else kn.right = insertV(kn.right, p, xmin, xmax, kn.p.y(), ymax);
+        if (cmp < 0) kn.left = insertV(kn.left, p, xmin, ymin, xmax, kn.p.y());
+        else kn.right = insertV(kn.right, p, xmin, kn.p.y(), xmax, ymax);
         kn.size = 1 + number(kn.left) + number(kn.right);
         return kn;
     }
@@ -153,8 +153,8 @@ public class KdTree {
         if (kn.p.distanceSquaredTo(p) < nst.distanceSquaredTo(p)) nst = kn.p;
 
         int cmp;
-        if (ver) cmp = kn.p.X_ORDER.compare(kn.p, p);
-        else cmp = kn.p.Y_ORDER.compare(kn.p, p);
+        if (ver) cmp = Point2D.X_ORDER.compare(kn.p, p);
+        else cmp = Point2D.Y_ORDER.compare(kn.p, p);
 
         if (cmp < 0) {
             nst = nearestSearch(kn.left, nst, p, !ver);
