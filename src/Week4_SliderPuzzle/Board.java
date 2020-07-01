@@ -8,6 +8,10 @@ public class Board {
     // create a board from an n-by-n array of tiles,
     // where tiles[row][col] = tile at (row, col)
     public Board(int[][] tiles) {
+        double a = 1;
+        double b = 2;
+        Double x = new Double(a);
+        Double y = x;
         n = tiles.length;
         if (n < 2 || n >= 128) {
             throw new IllegalArgumentException("The lines must be between 2 and 128");

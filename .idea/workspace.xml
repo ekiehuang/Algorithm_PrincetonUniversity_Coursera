@@ -20,14 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9234bf6-6823-4945-ba8b-fb4163fa5e22" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Week5_KdTree/KdTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Week5_KdTree/KdTreeVisionalization.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Week5_KdTree/Point2D.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Week5_KdTree/PointSET.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Week5_KdTree/RectHV.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithm.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithm.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Algorithm/Archive.zip" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algorithm/Archive.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Algorithm/FastCollinearPoints.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algorithm/FastCollinearPoints.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Algorithm/Percolation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algorithm/Percolation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Week1_Percolation/Percolation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Week1_Percolation/Percolation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Algorithm/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algorithm/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Algorithm/Solver$SearchNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algorithm/Solver$SearchNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Algorithm/Solver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Algorithm/Solver.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Week4_SliderPuzzle/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Week4_SliderPuzzle/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Week4_SliderPuzzle/Solver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Week4_SliderPuzzle/Solver.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +58,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="settings.saveactions" />
   </component>
@@ -63,7 +67,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Solver">
+  <component name="RunManager" selected="Application.KdTreeVisualizer">
     <configuration name="Board" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Board" />
       <module name="Algorithm" />
@@ -78,6 +82,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="KdTreeVisualizer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="KdTreeVisualizer" />
+      <module name="Algorithm" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Point2D" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Point2D" />
+      <module name="Algorithm" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Solver" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Solver" />
       <module name="Algorithm" />
@@ -87,6 +105,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.KdTreeVisualizer" />
+        <item itemvalue="Application.Point2D" />
         <item itemvalue="Application.Solver" />
         <item itemvalue="Application.Board" />
         <item itemvalue="Application.FastCollinearPoints" />
@@ -119,54 +139,58 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="533" y="163" key="#com.intellij.ide.util.MemberChooser" timestamp="1592370542805">
+    <state x="533" y="163" key="#com.intellij.ide.util.MemberChooser" timestamp="1593393463617">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="533" y="163" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1592370542805" />
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1592713573719">
+    <state x="533" y="163" key="#com.intellij.ide.util.MemberChooser/0.0.1440.900@0.0.1440.900" timestamp="1593393463617" />
+    <state width="1398" height="304" key="GridCell.Tab.0.bottom" timestamp="1593578512057">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1592713573719" />
+    <state width="1398" height="304" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1593578512057" />
     <state width="655" height="304" key="GridCell.Tab.0.bottom/0.23.1440.797@0.23.1440.797" timestamp="1591228826384" />
-    <state width="1398" height="245" key="GridCell.Tab.0.center" timestamp="1592713573717">
+    <state width="1398" height="304" key="GridCell.Tab.0.center" timestamp="1593578512054">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1592713573717" />
+    <state width="1398" height="304" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1593578512054" />
     <state width="655" height="304" key="GridCell.Tab.0.center/0.23.1440.797@0.23.1440.797" timestamp="1591228826383" />
-    <state width="1398" height="245" key="GridCell.Tab.0.left" timestamp="1592713573716">
+    <state width="1398" height="304" key="GridCell.Tab.0.left" timestamp="1593578512052">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1592713573716" />
+    <state width="1398" height="304" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1593578512052" />
     <state width="655" height="304" key="GridCell.Tab.0.left/0.23.1440.797@0.23.1440.797" timestamp="1591228826383" />
-    <state width="1398" height="245" key="GridCell.Tab.0.right" timestamp="1592713573718">
+    <state width="1398" height="304" key="GridCell.Tab.0.right" timestamp="1593578512056">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1398" height="245" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1592713573718" />
+    <state width="1398" height="304" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1593578512056" />
     <state width="655" height="304" key="GridCell.Tab.0.right/0.23.1440.797@0.23.1440.797" timestamp="1591228826383" />
-    <state width="1398" height="304" key="GridCell.Tab.1.bottom" timestamp="1592460315921">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="304" key="GridCell.Tab.1.bottom" timestamp="1593578508467">
+      <screen x="0" y="23" width="1440" height="804" />
     </state>
-    <state width="1398" height="304" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1592460315921" />
+    <state width="1398" height="304" key="GridCell.Tab.1.bottom/0.0.1440.900@0.0.1440.900" timestamp="1593578491988" />
     <state width="655" height="304" key="GridCell.Tab.1.bottom/0.23.1440.797@0.23.1440.797" timestamp="1591228827323" />
-    <state width="1398" height="304" key="GridCell.Tab.1.center" timestamp="1592460315921">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="304" key="GridCell.Tab.1.bottom/0.23.1440.804@0.23.1440.804" timestamp="1593578508467" />
+    <state width="1398" height="304" key="GridCell.Tab.1.center" timestamp="1593578508467">
+      <screen x="0" y="23" width="1440" height="804" />
     </state>
-    <state width="1398" height="304" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1592460315921" />
+    <state width="1398" height="304" key="GridCell.Tab.1.center/0.0.1440.900@0.0.1440.900" timestamp="1593578491986" />
     <state width="655" height="304" key="GridCell.Tab.1.center/0.23.1440.797@0.23.1440.797" timestamp="1591228827322" />
-    <state width="1398" height="304" key="GridCell.Tab.1.left" timestamp="1592460315920">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="304" key="GridCell.Tab.1.center/0.23.1440.804@0.23.1440.804" timestamp="1593578508467" />
+    <state width="1398" height="304" key="GridCell.Tab.1.left" timestamp="1593578508466">
+      <screen x="0" y="23" width="1440" height="804" />
     </state>
-    <state width="1398" height="304" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1592460315920" />
+    <state width="1398" height="304" key="GridCell.Tab.1.left/0.0.1440.900@0.0.1440.900" timestamp="1593578491984" />
     <state width="655" height="304" key="GridCell.Tab.1.left/0.23.1440.797@0.23.1440.797" timestamp="1591228827322" />
-    <state width="1398" height="304" key="GridCell.Tab.1.right" timestamp="1592460315921">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state width="1398" height="304" key="GridCell.Tab.1.left/0.23.1440.804@0.23.1440.804" timestamp="1593578508466" />
+    <state width="1398" height="304" key="GridCell.Tab.1.right" timestamp="1593578508467">
+      <screen x="0" y="23" width="1440" height="804" />
     </state>
-    <state width="1398" height="304" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1592460315921" />
+    <state width="1398" height="304" key="GridCell.Tab.1.right/0.0.1440.900@0.0.1440.900" timestamp="1593578491987" />
     <state width="655" height="304" key="GridCell.Tab.1.right/0.23.1440.797@0.23.1440.797" timestamp="1591228827322" />
-    <state x="221" y="63" key="SettingsEditor" timestamp="1592025875052">
+    <state width="1398" height="304" key="GridCell.Tab.1.right/0.23.1440.804@0.23.1440.804" timestamp="1593578508467" />
+    <state x="221" y="63" key="SettingsEditor" timestamp="1593060626240">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1592025875052" />
+    <state x="221" y="63" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1593060626240" />
     <state width="720" height="450" key="XDebugger.FullValuePopup" timestamp="1592458834587">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -184,6 +208,11 @@
           <url>file://$PROJECT_DIR$/src/Week4_SliderPuzzle/Solver.java</url>
           <line>123</line>
           <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Week5_KdTree/KdTreeVisionalization.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
